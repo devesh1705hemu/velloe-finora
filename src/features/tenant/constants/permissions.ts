@@ -1,0 +1,156 @@
+import { Role, PermissionsMap, Organization, Workspace } from "../types";
+
+/**
+ * Role-Based Capability Matrix
+ * Note: Frontend authorization serves purely for UI gating & ergonomics.
+ * Backend authorization remains strictly authoritative on all microservice endpoints.
+ */
+export const ROLE_PERMISSIONS: Record<Role, PermissionsMap> = {
+  owner: {
+    canViewTransactions: true,
+    canEditTransactions: true,
+    canExportData: true,
+    canManageUsers: true,
+    canViewReports: true,
+    canConfigureIntegrations: true,
+    canExecuteAIQueries: true,
+    canManageBilling: true,
+    canRunSimulations: true,
+    canDismissLeakage: true,
+    canViewAuditLogs: true,
+  },
+  admin: {
+    canViewTransactions: true,
+    canEditTransactions: true,
+    canExportData: true,
+    canManageUsers: true,
+    canViewReports: true,
+    canConfigureIntegrations: true,
+    canExecuteAIQueries: true,
+    canManageBilling: false, // Billing ownership stays with owner
+    canRunSimulations: true,
+    canDismissLeakage: true,
+    canViewAuditLogs: true,
+  },
+  manager: {
+    canViewTransactions: true,
+    canEditTransactions: true,
+    canExportData: true,
+    canManageUsers: true,
+    canViewReports: true,
+    canConfigureIntegrations: false,
+    canExecuteAIQueries: true,
+    canManageBilling: false,
+    canRunSimulations: true,
+    canDismissLeakage: true,
+    canViewAuditLogs: true,
+  },
+  financial_analyst: {
+    canViewTransactions: true,
+    canEditTransactions: true,
+    canExportData: true,
+    canManageUsers: false,
+    canViewReports: true,
+    canConfigureIntegrations: false,
+    canExecuteAIQueries: true,
+    canManageBilling: false,
+    canRunSimulations: true,
+    canDismissLeakage: true,
+    canViewAuditLogs: true,
+  },
+  member: {
+    canViewTransactions: true,
+    canEditTransactions: false,
+    canExportData: false,
+    canManageUsers: false,
+    canViewReports: true,
+    canConfigureIntegrations: false,
+    canExecuteAIQueries: true,
+    canManageBilling: false,
+    canRunSimulations: false,
+    canDismissLeakage: false,
+    canViewAuditLogs: false,
+  },
+  viewer: {
+    canViewTransactions: true,
+    canEditTransactions: false,
+    canExportData: false,
+    canManageUsers: false,
+    canViewReports: true,
+    canConfigureIntegrations: false,
+    canExecuteAIQueries: false,
+    canManageBilling: false,
+    canRunSimulations: false,
+    canDismissLeakage: false,
+    canViewAuditLogs: false,
+  },
+};
+
+export const INITIAL_ORGANIZATIONS: Organization[] = [
+  {
+    id: "org-apex-01",
+    name: "Apex Horizon Technologies Inc.",
+    slug: "apex-horizon",
+    tier: "enterprise",
+    plan: "Velloe Enterprise Tier",
+    createdAt: "2024-01-15T08:00:00Z",
+  },
+  {
+    id: "org-vanguard-02",
+    name: "Vanguard Venture Labs",
+    slug: "vanguard-labs",
+    tier: "growth",
+    plan: "Velloe Growth Tier",
+    createdAt: "2024-06-10T12:00:00Z",
+  },
+];
+
+export const INITIAL_WORKSPACES: Workspace[] = [
+  {
+    id: "ws-personal-01",
+    name: "Personal Wealth & Assets",
+    slug: "personal-vault",
+    type: "personal",
+    role: "owner",
+    currency: "USD",
+    metrics: {
+      totalBalance: 348250.0,
+      monthlyBurn: 8420.0,
+      runwayMonths: 41.3,
+      teamMembersCount: 1,
+      activeCurrencies: ["USD", "EUR"],
+    },
+  },
+  {
+    id: "ws-apex-primary",
+    orgId: "org-apex-01",
+    name: "Apex Operating Treasury",
+    slug: "apex-operating",
+    type: "organization",
+    role: "owner",
+    currency: "USD",
+    metrics: {
+      totalBalance: 2845920.0,
+      monthlyBurn: 114500.0,
+      runwayMonths: 24.8,
+      teamMembersCount: 18,
+      activeCurrencies: ["USD", "GBP", "EUR"],
+    },
+  },
+  {
+    id: "ws-vanguard-rnd",
+    orgId: "org-vanguard-02",
+    name: "Vanguard R&D Capital Pool",
+    slug: "vanguard-rnd",
+    type: "organization",
+    role: "financial_analyst",
+    currency: "USD",
+    metrics: {
+      totalBalance: 980400.0,
+      monthlyBurn: 42000.0,
+      runwayMonths: 23.3,
+      teamMembersCount: 6,
+      activeCurrencies: ["USD"],
+    },
+  },
+];
