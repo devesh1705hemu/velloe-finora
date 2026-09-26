@@ -1,8 +1,8 @@
-FINORA
+# FINORA
 
-Financial Intelligence for Your Future
+## Financial Intelligence for Your Future
 
-Your money has a future. See it.
+### Your money has a future. See it.
 
 Finora is a financial intelligence and decision-support platform for
 young earners. It goes beyond traditional expense tracking by analyzing
@@ -10,16 +10,16 @@ financial activity, identifying potential savings opportunities,
 simulating future scenarios, and connecting spending decisions with
 financial goals.
 
-🚀 The Problem
+# 🚀 The Problem
 
-Most people can see their bank or UPI transactions, but transaction
+## Most people can see their bank or UPI transactions, but transaction
 history alone does not answer:
 
-Where am I spending the most?
+## Where am I spending the most?
 
-Which recurring expenses could be reduced?
+## Which recurring expenses could be reduced?
 
-Where are my potential savings opportunities?
+## Where are my potential savings opportunities?
 
 What happens if I change my spending?
 
@@ -33,7 +33,7 @@ Finora aims to answer:
 
 "Where could my money take me?"
 
-💡 The Finora Approach
+# 💡 The Finora Approach
 
 TRACK
   ↓
@@ -53,7 +53,7 @@ REPEAT
 
 Finora converts financial activity into actionable decision support.
 
-🏗️ System Architecture
+# 🏗️ System Architecture
 
                                   ┌───────────────────────┐
                                   │        USER           │
@@ -125,7 +125,7 @@ Finora converts financial activity into actionable decision support.
                               │ Validated Response          │
                               └─────────────────────────────┘
 
-🔄 Core Data Flow
+# 🔄 Core Data Flow
 
 Transaction Data
       │
@@ -162,7 +162,7 @@ Transaction Database
                               ▼
                     Natural Language Insight
 
-🎯 Core Modules
+# 🎯 Core Modules
 
 1. Dashboard
 
@@ -331,7 +331,7 @@ outcomes.
 
 Actual financial data is never modified simply by changing a scenario.
 
-🤖 7. Finora AI
+# 🤖 7. Finora AI
 
 Finora AI acts as a financial intelligence assistant.
 
@@ -349,7 +349,7 @@ Compare this month with last month.
 
 What happens if I save ₹3,000 more every month?
 
-AI Architecture
+# AI Architecture
 
 User Question
      │
@@ -377,7 +377,7 @@ The AI is responsible for explaining verified results.
 
 This reduces the risk of the AI inventing financial numbers.
 
-👤 Real-World Example
+# 👤 Real-World Example
 
 Imagine a 25-year-old professional earns:
 
@@ -440,7 +440,7 @@ Future Goal Impact
      ↓
 Better Decision
 
-🧠 Financial Intelligence Engine
+## 🧠 Financial Intelligence Engine
 
 Finora should keep deterministic financial calculations separate from
 AI-generated explanations.
@@ -641,7 +641,7 @@ Vercel
 
 Cloud infrastructure
 
-📁 Suggested Project Structure
+# 📁 Suggested Project Structure
 
 finora/
 │
@@ -681,7 +681,7 @@ finora/
 ├── .gitignore
 └── README.md
 
-🚀 Getting Started
+# 🚀 Getting Started
 
 1. Clone the repository
 
@@ -763,23 +763,7 @@ Verify Projection
     ↓
 Ask Finora AI
 
-🏆 Hackathon Demo Flow
 
-Landing Page
-      ↓
-Explore Demo
-      ↓
-Dashboard
-      ↓
-Transactions
-      ↓
-Potential Leakage
-      ↓
-Future Simulator
-      ↓
-Goal Impact
-      ↓
-Finora AI
 
 The key demo moment
 
